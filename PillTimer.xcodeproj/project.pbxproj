@@ -1,0 +1,323 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F9A5609D16BFFE2A00FA47D9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A5609C16BFFE2A00FA47D9 /* UIKit.framework */; };
+		F9A5609F16BFFE2A00FA47D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A5609E16BFFE2A00FA47D9 /* Foundation.framework */; };
+		F9A560A116BFFE2A00FA47D9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A560A016BFFE2A00FA47D9 /* CoreGraphics.framework */; };
+		F9A560A716BFFE2A00FA47D9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F9A560A516BFFE2A00FA47D9 /* InfoPlist.strings */; };
+		F9A560A916BFFE2A00FA47D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A560A816BFFE2A00FA47D9 /* main.m */; };
+		F9A560AD16BFFE2A00FA47D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A560AC16BFFE2A00FA47D9 /* AppDelegate.m */; };
+		F9A560B016BFFE2A00FA47D9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A560AF16BFFE2A00FA47D9 /* MainViewController.m */; };
+		F9A560B316BFFE2A00FA47D9 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A560B216BFFE2A00FA47D9 /* FlipsideViewController.m */; };
+		F9A560B616BFFE2A00FA47D9 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A560B416BFFE2A00FA47D9 /* MainViewController.xib */; };
+		F9A560B916BFFE2A00FA47D9 /* FlipsideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9A560B716BFFE2A00FA47D9 /* FlipsideViewController.xib */; };
+		F9C2320316C941800027B048 /* Ex.png in Resources */ = {isa = PBXBuildFile; fileRef = F9C231FF16C941800027B048 /* Ex.png */; };
+		F9C2320416C941800027B048 /* Ex@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9C2320016C941800027B048 /* Ex@2x.png */; };
+		F9C2320516C941800027B048 /* OK.png in Resources */ = {isa = PBXBuildFile; fileRef = F9C2320116C941800027B048 /* OK.png */; };
+		F9C2320616C941800027B048 /* OK@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F9C2320216C941800027B048 /* OK@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F9A5609816BFFE2A00FA47D9 /* PillTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PillTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9A5609C16BFFE2A00FA47D9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F9A5609E16BFFE2A00FA47D9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F9A560A016BFFE2A00FA47D9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		F9A560A416BFFE2A00FA47D9 /* PillTimer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PillTimer-Info.plist"; sourceTree = "<group>"; };
+		F9A560A616BFFE2A00FA47D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		F9A560A816BFFE2A00FA47D9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F9A560AA16BFFE2A00FA47D9 /* PillTimer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PillTimer-Prefix.pch"; sourceTree = "<group>"; };
+		F9A560AB16BFFE2A00FA47D9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F9A560AC16BFFE2A00FA47D9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F9A560AE16BFFE2A00FA47D9 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		F9A560AF16BFFE2A00FA47D9 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		F9A560B116BFFE2A00FA47D9 /* FlipsideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlipsideViewController.h; sourceTree = "<group>"; };
+		F9A560B216BFFE2A00FA47D9 /* FlipsideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlipsideViewController.m; sourceTree = "<group>"; };
+		F9A560B516BFFE2A00FA47D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainViewController.xib; sourceTree = "<group>"; };
+		F9A560B816BFFE2A00FA47D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FlipsideViewController.xib; sourceTree = "<group>"; };
+		F9C231FF16C941800027B048 /* Ex.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Ex.png; sourceTree = "<group>"; };
+		F9C2320016C941800027B048 /* Ex@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Ex@2x.png"; sourceTree = "<group>"; };
+		F9C2320116C941800027B048 /* OK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OK.png; sourceTree = "<group>"; };
+		F9C2320216C941800027B048 /* OK@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "OK@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F9A5609516BFFE2A00FA47D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9A5609D16BFFE2A00FA47D9 /* UIKit.framework in Frameworks */,
+				F9A5609F16BFFE2A00FA47D9 /* Foundation.framework in Frameworks */,
+				F9A560A116BFFE2A00FA47D9 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F9A5608D16BFFE2A00FA47D9 = {
+			isa = PBXGroup;
+			children = (
+				F9A560A216BFFE2A00FA47D9 /* PillTimer */,
+				F9A5609B16BFFE2A00FA47D9 /* Frameworks */,
+				F9A5609916BFFE2A00FA47D9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F9A5609916BFFE2A00FA47D9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F9A5609816BFFE2A00FA47D9 /* PillTimer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F9A5609B16BFFE2A00FA47D9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F9A5609C16BFFE2A00FA47D9 /* UIKit.framework */,
+				F9A5609E16BFFE2A00FA47D9 /* Foundation.framework */,
+				F9A560A016BFFE2A00FA47D9 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F9A560A216BFFE2A00FA47D9 /* PillTimer */ = {
+			isa = PBXGroup;
+			children = (
+				F9C231FF16C941800027B048 /* Ex.png */,
+				F9C2320016C941800027B048 /* Ex@2x.png */,
+				F9C2320116C941800027B048 /* OK.png */,
+				F9C2320216C941800027B048 /* OK@2x.png */,
+				F9A560AB16BFFE2A00FA47D9 /* AppDelegate.h */,
+				F9A560AC16BFFE2A00FA47D9 /* AppDelegate.m */,
+				F9A560AE16BFFE2A00FA47D9 /* MainViewController.h */,
+				F9A560AF16BFFE2A00FA47D9 /* MainViewController.m */,
+				F9A560B116BFFE2A00FA47D9 /* FlipsideViewController.h */,
+				F9A560B216BFFE2A00FA47D9 /* FlipsideViewController.m */,
+				F9A560B416BFFE2A00FA47D9 /* MainViewController.xib */,
+				F9A560B716BFFE2A00FA47D9 /* FlipsideViewController.xib */,
+				F9A560A316BFFE2A00FA47D9 /* Supporting Files */,
+			);
+			path = PillTimer;
+			sourceTree = "<group>";
+		};
+		F9A560A316BFFE2A00FA47D9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F9A560A416BFFE2A00FA47D9 /* PillTimer-Info.plist */,
+				F9A560A516BFFE2A00FA47D9 /* InfoPlist.strings */,
+				F9A560A816BFFE2A00FA47D9 /* main.m */,
+				F9A560AA16BFFE2A00FA47D9 /* PillTimer-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F9A5609716BFFE2A00FA47D9 /* PillTimer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F9A560BC16BFFE2A00FA47D9 /* Build configuration list for PBXNativeTarget "PillTimer" */;
+			buildPhases = (
+				F9A5609416BFFE2A00FA47D9 /* Sources */,
+				F9A5609516BFFE2A00FA47D9 /* Frameworks */,
+				F9A5609616BFFE2A00FA47D9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PillTimer;
+			productName = PillTimer;
+			productReference = F9A5609816BFFE2A00FA47D9 /* PillTimer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F9A5608F16BFFE2A00FA47D9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Evan Hildreth";
+			};
+			buildConfigurationList = F9A5609216BFFE2A00FA47D9 /* Build configuration list for PBXProject "PillTimer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = F9A5608D16BFFE2A00FA47D9;
+			productRefGroup = F9A5609916BFFE2A00FA47D9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F9A5609716BFFE2A00FA47D9 /* PillTimer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F9A5609616BFFE2A00FA47D9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9A560A716BFFE2A00FA47D9 /* InfoPlist.strings in Resources */,
+				F9A560B616BFFE2A00FA47D9 /* MainViewController.xib in Resources */,
+				F9A560B916BFFE2A00FA47D9 /* FlipsideViewController.xib in Resources */,
+				F9C2320316C941800027B048 /* Ex.png in Resources */,
+				F9C2320416C941800027B048 /* Ex@2x.png in Resources */,
+				F9C2320516C941800027B048 /* OK.png in Resources */,
+				F9C2320616C941800027B048 /* OK@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F9A5609416BFFE2A00FA47D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9A560A916BFFE2A00FA47D9 /* main.m in Sources */,
+				F9A560AD16BFFE2A00FA47D9 /* AppDelegate.m in Sources */,
+				F9A560B016BFFE2A00FA47D9 /* MainViewController.m in Sources */,
+				F9A560B316BFFE2A00FA47D9 /* FlipsideViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F9A560A516BFFE2A00FA47D9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9A560A616BFFE2A00FA47D9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		F9A560B416BFFE2A00FA47D9 /* MainViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9A560B516BFFE2A00FA47D9 /* en */,
+			);
+			name = MainViewController.xib;
+			sourceTree = "<group>";
+		};
+		F9A560B716BFFE2A00FA47D9 /* FlipsideViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F9A560B816BFFE2A00FA47D9 /* en */,
+			);
+			name = FlipsideViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F9A560BA16BFFE2A00FA47D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F9A560BB16BFFE2A00FA47D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F9A560BD16BFFE2A00FA47D9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PillTimer/PillTimer-Prefix.pch";
+				INFOPLIST_FILE = "PillTimer/PillTimer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		F9A560BE16BFFE2A00FA47D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PillTimer/PillTimer-Prefix.pch";
+				INFOPLIST_FILE = "PillTimer/PillTimer-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F9A5609216BFFE2A00FA47D9 /* Build configuration list for PBXProject "PillTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9A560BA16BFFE2A00FA47D9 /* Debug */,
+				F9A560BB16BFFE2A00FA47D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F9A560BC16BFFE2A00FA47D9 /* Build configuration list for PBXNativeTarget "PillTimer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F9A560BD16BFFE2A00FA47D9 /* Debug */,
+				F9A560BE16BFFE2A00FA47D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F9A5608F16BFFE2A00FA47D9 /* Project object */;
+}
