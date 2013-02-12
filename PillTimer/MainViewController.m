@@ -28,7 +28,11 @@ const NSTimeInterval TwentyFourHourTimeInterval = 86400;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	[self recalculateIndicators];
+	if ((_doseHourlyInterval <= 0) || (_doseDailyLimit <= 0)) {
+		[self showInfo:self];
+	} else {
+		[self recalculateIndicators];
+	}
 }
 
 - (void)viewDidUnload
