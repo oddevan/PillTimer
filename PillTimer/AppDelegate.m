@@ -49,4 +49,9 @@
 	// Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+	//tell mainViewController to recalculate because we should be good to go
+}
+
 @end

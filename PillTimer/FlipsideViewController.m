@@ -24,6 +24,7 @@
 {
 	[self setDoseHourlyInterval:nil];
 	[self setDoseDailyLimit:nil];
+	[self setAlertSwitch:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -42,6 +43,9 @@
 
 - (IBAction)clearRecentDoses:(id)sender {
 	[self.delegate flipsideViewControllerClearDoses:self];
+}
+- (IBAction)alertSettingChanged:(id)sender {
+	[self.delegate flipsideViewController:self changedAlertSettingTo:self.alertSwitch.on];
 }
 
 @end
