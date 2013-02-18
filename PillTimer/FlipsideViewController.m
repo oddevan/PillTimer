@@ -41,11 +41,24 @@
     [self.delegate flipsideViewControllerDidFinish:self];
 }
 
-- (IBAction)clearRecentDoses:(id)sender {
+- (IBAction)clearRecentDoses:(id)sender
+{
 	[self.delegate flipsideViewControllerClearDoses:self];
 }
-- (IBAction)alertSettingChanged:(id)sender {
+
+- (IBAction)alertSettingChanged:(id)sender
+{
 	[self.delegate flipsideViewController:self changedAlertSettingTo:self.alertSwitch.on];
+}
+
+- (IBAction)hourlyLimitChanged:(id)sender
+{
+	[self.delegate flipsideViewController:self changedHourlyIntervalTo:self.doseHourlyInterval.text.intValue];
+}
+
+- (IBAction)dailyLimitChanged:(id)sender
+{
+	[self.delegate flipsideViewController:self changedDailyLimitTo:self.doseDailyLimit.text.intValue];
 }
 
 @end

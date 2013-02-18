@@ -13,6 +13,8 @@
 @protocol FlipsideViewControllerDelegate
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller;
 - (void)flipsideViewControllerClearDoses:(FlipsideViewController *)controller;
+- (void)flipsideViewController:(FlipsideViewController *)controller changedHourlyIntervalTo:(int)hourlyInterval;
+- (void)flipsideViewController:(FlipsideViewController *)controller changedDailyLimitTo:(int)dailyLimit;
 - (void)flipsideViewController:(FlipsideViewController *)controller changedAlertSettingTo:(BOOL)alertsOn;
 @end
 
@@ -26,5 +28,7 @@
 - (IBAction)done:(id)sender;
 - (IBAction)clearRecentDoses:(id)sender;
 - (IBAction)alertSettingChanged:(id)sender;
+- (IBAction)hourlyLimitChanged:(id)sender;
+- (IBAction)dailyLimitChanged:(id)sender;
 
 @end

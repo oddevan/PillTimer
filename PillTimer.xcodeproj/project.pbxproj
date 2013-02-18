@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		F98982AE16CBFC8A0091E675 /* PillTimerAlert.aif in Resources */ = {isa = PBXBuildFile; fileRef = F98982AD16CBFC8A0091E675 /* PillTimerAlert.aif */; };
+		F98982B116D287AF0091E675 /* DoseStore.m in Sources */ = {isa = PBXBuildFile; fileRef = F98982B016D287AF0091E675 /* DoseStore.m */; };
 		F9A5609D16BFFE2A00FA47D9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A5609C16BFFE2A00FA47D9 /* UIKit.framework */; };
 		F9A5609F16BFFE2A00FA47D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A5609E16BFFE2A00FA47D9 /* Foundation.framework */; };
 		F9A560A116BFFE2A00FA47D9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A560A016BFFE2A00FA47D9 /* CoreGraphics.framework */; };
@@ -26,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		F98982AD16CBFC8A0091E675 /* PillTimerAlert.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = PillTimerAlert.aif; sourceTree = "<group>"; };
+		F98982AF16D287AF0091E675 /* DoseStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoseStore.h; sourceTree = "<group>"; };
+		F98982B016D287AF0091E675 /* DoseStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoseStore.m; sourceTree = "<group>"; };
 		F9A5609816BFFE2A00FA47D9 /* PillTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PillTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9A5609C16BFFE2A00FA47D9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F9A5609E16BFFE2A00FA47D9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -106,6 +109,8 @@
 				F9A560B416BFFE2A00FA47D9 /* MainViewController.xib */,
 				F9A560B716BFFE2A00FA47D9 /* FlipsideViewController.xib */,
 				F9A560A316BFFE2A00FA47D9 /* Supporting Files */,
+				F98982AF16D287AF0091E675 /* DoseStore.h */,
+				F98982B016D287AF0091E675 /* DoseStore.m */,
 			);
 			path = PillTimer;
 			sourceTree = "<group>";
@@ -194,6 +199,7 @@
 				F9A560AD16BFFE2A00FA47D9 /* AppDelegate.m in Sources */,
 				F9A560B016BFFE2A00FA47D9 /* MainViewController.m in Sources */,
 				F9A560B316BFFE2A00FA47D9 /* FlipsideViewController.m in Sources */,
+				F98982B116D287AF0091E675 /* DoseStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

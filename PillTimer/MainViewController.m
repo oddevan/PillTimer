@@ -7,21 +7,21 @@
 //
 
 #import "MainViewController.h"
+#import "DoseStore.h"
 
 const NSTimeInterval TwentyFourHourTimeInterval = 86400;
+const NSTimeInterval OneHourTimeInterval = 3600;
 NSString * const PillTimerHourlyPrefKey = @"PillTimerHourlyPrefKey";
 NSString * const PillTimerDailyPrefKey = @"PillTimerDailyPrefKey";
 NSString * const PillTimerAlertsPrefKey  = @"PillTimerAlertsPrefKey";
 
 @interface MainViewController ()
 {
-	NSMutableArray *_allRecentDoses;
 	NSTimeInterval _doseHourlyInterval;
 	int _doseDailyLimit;
 	BOOL _alertsOn;
 }
 
-- (void)recalculateIndicators;
 - (void)setIndicatorsYes;
 - (void)setIndicatorsNo:(NSDate *)expiresTime;
 - (void)refreshRecentDoses;
@@ -44,8 +44,8 @@ NSString * const PillTimerAlertsPrefKey  = @"PillTimerAlertsPrefKey";
 - (void)viewDidAppear:(BOOL)animated
 {
 	if ((_doseHourlyInterval <= 0) || (_doseDailyLimit <= 0)) {
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Please configure"
-														message:@"Please set the dosage information in settings."
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"PillTimer"
+														message:@"Welcome! Please set the dosage information so we can begin."
 													   delegate:nil
 											  cancelButtonTitle:@"OK"
 											  otherButtonTitles:nil];
@@ -74,13 +74,13 @@ NSString * const PillTimerAlertsPrefKey  = @"PillTimerAlertsPrefKey";
 {
 	BOOL dosesNeedRefresh = NO;
 	
-	if (_allRecentDoses) {
+	if ([[DoseStore defaultStore] numberOfDoses] > 0) {
 		NSDate *earliestDose = [NSDate distantFuture];
 		NSDate *latestDose = [NSDate distantPast];
 		
-		for (NSDate *thisDate in _allRecentDoses) {
+		for (NSDate *thisDate in [[DoseStore defaultStore] allRecentDoses]) {
 			if (fabs([thisDate timeIntervalSinceNow]) > TwentyFourHourTimeInterval) {
-				[_allRecentDoses removeObject:thisDate];
+				[[DoseStore defaultStore] removeDose:thisDate];
 				dosesNeedRefresh = YES;
 			} else {
 				if ([thisDate timeIntervalSinceDate:latestDose] > 0) {
@@ -92,12 +92,12 @@ NSString * const PillTimerAlertsPrefKey  = @"PillTimerAlertsPrefKey";
 			}
 		}
 		
-		if (([_allRecentDoses count] >= _doseDailyLimit) ||
+		if (([[DoseStore defaultStore] numberOfDoses] >= _doseDailyLimit) ||
 			(fabs([latestDose timeIntervalSinceNow]) < _doseHourlyInterval)) {
 			NSDate *earliestDoseExpires = [earliestDose dateByAddingTimeInterval:TwentyFourHourTimeInterval];
 			NSDate *latestDoseExpires = [latestDose dateByAddingTimeInterval:_doseHourlyInterval];
 			
-			if ([_allRecentDoses count] >= _doseDailyLimit &&
+			if ([[DoseStore defaultStore] numberOfDoses] >= _doseDailyLimit &&
 				[earliestDoseExpires timeIntervalSinceDate:latestDoseExpires] > 0) {
 				if (_alertsOn) [self setAlertFor:earliestDoseExpires];
 				[self setIndicatorsNo:earliestDoseExpires];
@@ -110,7 +110,6 @@ NSString * const PillTimerAlertsPrefKey  = @"PillTimerAlertsPrefKey";
 			[self setIndicatorsYes];
 		}
 	} else {
-		_allRecentDoses = [[NSMutableArray alloc] init];
 		[self setIndicatorsYes];
 		dosesNeedRefresh = YES;
 	}
@@ -122,7 +121,7 @@ NSString * const PillTimerAlertsPrefKey  = @"PillTimerAlertsPrefKey";
 {
 	NSMutableString *newDoseList = [[NSMutableString alloc] init];
 	
-	for (NSDate *thisDate in _allRecentDoses) {
+	for (NSDate *thisDate in [[DoseStore defaultStore] allRecentDoses]) {
 		if (newDoseList.length > 0) [newDoseList appendString:@"\n"];
 		
 		[newDoseList appendString:[NSDateFormatter localizedStringFromDate:thisDate
@@ -134,7 +133,7 @@ NSString * const PillTimerAlertsPrefKey  = @"PillTimerAlertsPrefKey";
 }
 
 - (IBAction)recordNewDose:(id)sender {
-	[_allRecentDoses addObject:[NSDate date]];
+	[[DoseStore defaultStore] addDose:[NSDate date]];
 	[self refreshRecentDoses];
 	[self recalculateIndicators];
 }
@@ -175,31 +174,36 @@ NSString * const PillTimerAlertsPrefKey  = @"PillTimerAlertsPrefKey";
 
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller
 {
-	_doseDailyLimit = controller.doseDailyLimit.text.intValue;
-	[[NSUserDefaults standardUserDefaults] setInteger:controller.doseDailyLimit.text.intValue
-											   forKey:PillTimerDailyPrefKey];
-	
-	_doseHourlyInterval = controller.doseHourlyInterval.text.intValue * 3600;
-	[[NSUserDefaults standardUserDefaults] setInteger:controller.doseHourlyInterval.text.intValue
-											   forKey:PillTimerHourlyPrefKey];
-	
     [self dismissModalViewControllerAnimated:YES];
 	
 	[self refreshRecentDoses];
 	[self recalculateIndicators];
 }
 
-- (void)flipsideViewControllerClearDoses:(FlipsideViewController *)controller {
-	[_allRecentDoses removeAllObjects];
+- (void)flipsideViewControllerClearDoses:(FlipsideViewController *)controller
+{
+	[[DoseStore defaultStore] removeAllDoses];
 	[self clearAlert];
+}
+
+- (void)flipsideViewController:(FlipsideViewController *)controller changedHourlyIntervalTo:(int)hourlyInterval
+{
+	_doseHourlyInterval = hourlyInterval * OneHourTimeInterval;
+	[[NSUserDefaults standardUserDefaults] setInteger:hourlyInterval
+											   forKey:PillTimerHourlyPrefKey];
+}
+
+- (void)flipsideViewController:(FlipsideViewController *)controller changedDailyLimitTo:(int)dailyLimit
+{
+	_doseDailyLimit = dailyLimit;
+	[[NSUserDefaults standardUserDefaults] setInteger:dailyLimit
+											   forKey:PillTimerDailyPrefKey];
 }
 
 - (void)flipsideViewController:(FlipsideViewController *)controller changedAlertSettingTo:(BOOL)alertsOn
 {
 	_alertsOn = alertsOn;
-	if (!alertsOn) {
-		[self clearAlert];
-	}
+	if (!alertsOn) [self clearAlert];
 	
 	[[NSUserDefaults standardUserDefaults] setBool:alertsOn forKey:PillTimerAlertsPrefKey];
 }
@@ -210,7 +214,7 @@ NSString * const PillTimerAlertsPrefKey  = @"PillTimerAlertsPrefKey";
     controller.delegate = self;
     controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
     [self presentModalViewController:controller animated:YES];
-	controller.doseHourlyInterval.text = [NSString stringWithFormat:@"%d", (int)(_doseHourlyInterval / 3600)];
+	controller.doseHourlyInterval.text = [NSString stringWithFormat:@"%d", (int)(_doseHourlyInterval / OneHourTimeInterval)];
 	controller.doseDailyLimit.text = [NSString stringWithFormat:@"%d", _doseDailyLimit];
 	controller.alertSwitch.on = _alertsOn;
 }

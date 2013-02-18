@@ -10,6 +10,8 @@
 
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate>
 
+- (void)recalculateIndicators;
+
 - (IBAction)showInfo:(id)sender;
 - (IBAction)recordNewDose:(id)sender;
 
