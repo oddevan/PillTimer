@@ -33,6 +33,11 @@
 	[[DoseStore defaultStore] saveChanges];
 }
 
+- (void)applicationDidBecomeActive:(UIApplication *)application
+{
+	[self.mainViewController recalculateIndicators];
+}
+
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
 	[self.mainViewController recalculateIndicators];

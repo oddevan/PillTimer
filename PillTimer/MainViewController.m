@@ -72,8 +72,6 @@ NSString * const PillTimerAlertsPrefKey  = @"PillTimerAlertsPrefKey";
 
 - (void)recalculateIndicators
 {
-	BOOL dosesNeedRefresh = NO;
-	
 	if ([[DoseStore defaultStore] numberOfDoses] > 0) {
 		NSDate *earliestDose = [NSDate distantFuture];
 		NSDate *latestDose = [NSDate distantPast];
@@ -81,7 +79,6 @@ NSString * const PillTimerAlertsPrefKey  = @"PillTimerAlertsPrefKey";
 		for (NSDate *thisDate in [[DoseStore defaultStore] allRecentDoses]) {
 			if (fabs([thisDate timeIntervalSinceNow]) > TwentyFourHourTimeInterval) {
 				[[DoseStore defaultStore] removeDose:thisDate];
-				dosesNeedRefresh = YES;
 			} else {
 				if ([thisDate timeIntervalSinceDate:latestDose] > 0) {
 					latestDose = thisDate;
@@ -111,10 +108,9 @@ NSString * const PillTimerAlertsPrefKey  = @"PillTimerAlertsPrefKey";
 		}
 	} else {
 		[self setIndicatorsYes];
-		dosesNeedRefresh = YES;
 	}
 	
-	if (dosesNeedRefresh) [self refreshRecentDoses];
+	[self refreshRecentDoses];
 }
 
 - (void)refreshRecentDoses
