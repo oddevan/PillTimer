@@ -50,7 +50,8 @@ NSString * const PillTimerAlertsPrefKey  = @"PillTimerAlertsPrefKey";
 											  cancelButtonTitle:@"OK"
 											  otherButtonTitles:nil];
 		[alert show];
-		[self showInfo:nil];
+		self.indicatorImage.image = [UIImage imageNamed:@"Neutral.png"];
+		//[self showInfo:nil];
 	} else {
 		[self recalculateIndicators];
 	}

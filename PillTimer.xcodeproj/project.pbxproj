@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F927CDF016D822F1002FD513 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = F927CDEF16D822F1002FD513 /* Default.png */; };
+		F927CDF216D822FB002FD513 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F927CDF116D822FA002FD513 /* Default@2x.png */; };
 		F98982AE16CBFC8A0091E675 /* PillTimerAlert.aif in Resources */ = {isa = PBXBuildFile; fileRef = F98982AD16CBFC8A0091E675 /* PillTimerAlert.aif */; };
 		F98982B116D287AF0091E675 /* DoseStore.m in Sources */ = {isa = PBXBuildFile; fileRef = F98982B016D287AF0091E675 /* DoseStore.m */; };
+		F98982B416D2E20C0091E675 /* Neutral.png in Resources */ = {isa = PBXBuildFile; fileRef = F98982B216D2E20C0091E675 /* Neutral.png */; };
+		F98982B516D2E20C0091E675 /* Neutral@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F98982B316D2E20C0091E675 /* Neutral@2x.png */; };
 		F9A5609D16BFFE2A00FA47D9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A5609C16BFFE2A00FA47D9 /* UIKit.framework */; };
 		F9A5609F16BFFE2A00FA47D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A5609E16BFFE2A00FA47D9 /* Foundation.framework */; };
 		F9A560A116BFFE2A00FA47D9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A560A016BFFE2A00FA47D9 /* CoreGraphics.framework */; };
@@ -26,9 +30,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F927CDEF16D822F1002FD513 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		F927CDF116D822FA002FD513 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		F98982AD16CBFC8A0091E675 /* PillTimerAlert.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = PillTimerAlert.aif; sourceTree = "<group>"; };
 		F98982AF16D287AF0091E675 /* DoseStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoseStore.h; sourceTree = "<group>"; };
 		F98982B016D287AF0091E675 /* DoseStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoseStore.m; sourceTree = "<group>"; };
+		F98982B216D2E20C0091E675 /* Neutral.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Neutral.png; sourceTree = "<group>"; };
+		F98982B316D2E20C0091E675 /* Neutral@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Neutral@2x.png"; sourceTree = "<group>"; };
 		F9A5609816BFFE2A00FA47D9 /* PillTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PillTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9A5609C16BFFE2A00FA47D9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F9A5609E16BFFE2A00FA47D9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -68,6 +76,8 @@
 		F9A5608D16BFFE2A00FA47D9 = {
 			isa = PBXGroup;
 			children = (
+				F927CDF116D822FA002FD513 /* Default@2x.png */,
+				F927CDEF16D822F1002FD513 /* Default.png */,
 				F9A560A216BFFE2A00FA47D9 /* PillTimer */,
 				F9A5609B16BFFE2A00FA47D9 /* Frameworks */,
 				F9A5609916BFFE2A00FA47D9 /* Products */,
@@ -100,6 +110,8 @@
 				F9C2320016C941800027B048 /* Ex@2x.png */,
 				F9C2320116C941800027B048 /* OK.png */,
 				F9C2320216C941800027B048 /* OK@2x.png */,
+				F98982B216D2E20C0091E675 /* Neutral.png */,
+				F98982B316D2E20C0091E675 /* Neutral@2x.png */,
 				F9A560AB16BFFE2A00FA47D9 /* AppDelegate.h */,
 				F9A560AC16BFFE2A00FA47D9 /* AppDelegate.m */,
 				F9A560AE16BFFE2A00FA47D9 /* MainViewController.h */,
@@ -185,6 +197,10 @@
 				F9C2320516C941800027B048 /* OK.png in Resources */,
 				F9C2320616C941800027B048 /* OK@2x.png in Resources */,
 				F98982AE16CBFC8A0091E675 /* PillTimerAlert.aif in Resources */,
+				F98982B416D2E20C0091E675 /* Neutral.png in Resources */,
+				F98982B516D2E20C0091E675 /* Neutral@2x.png in Resources */,
+				F927CDF016D822F1002FD513 /* Default.png in Resources */,
+				F927CDF216D822FB002FD513 /* Default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
