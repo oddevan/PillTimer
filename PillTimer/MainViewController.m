@@ -24,6 +24,7 @@ NSString * const PillTimerAlertsPrefKey  = @"PillTimerAlertsPrefKey";
 
 - (void)setIndicatorsYes;
 - (void)setIndicatorsNo:(NSDate *)expiresTime;
+- (void)setIndicatorsNeutral;
 - (void)refreshRecentDoses;
 - (void)setAlertFor:(NSDate *)fireTime;
 - (void)clearAlert;
@@ -37,23 +38,23 @@ NSString * const PillTimerAlertsPrefKey  = @"PillTimerAlertsPrefKey";
     [super viewDidLoad];
 	
 	_doseDailyLimit = [[NSUserDefaults standardUserDefaults] integerForKey:PillTimerDailyPrefKey];
-	_doseHourlyInterval = [[NSUserDefaults standardUserDefaults] integerForKey:PillTimerHourlyPrefKey] * 3600;
+	_doseHourlyInterval = [[NSUserDefaults standardUserDefaults] integerForKey:PillTimerHourlyPrefKey] * OneHourTimeInterval;
 	_alertsOn = [[NSUserDefaults standardUserDefaults] boolForKey:PillTimerAlertsPrefKey];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
-	if ((_doseHourlyInterval <= 0) || (_doseDailyLimit <= 0)) {
-		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"PillTimer"
-														message:@"Welcome! Please set the dosage information so we can begin."
+	[self recalculateIndicators];
+	
+	if ((_doseHourlyInterval < 0) || (_doseDailyLimit <= 0)) {
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Information", nil)
+														message:NSLocalizedString(@"Welcome! Please set the dosage information so we can begin.", nil)
 													   delegate:nil
 											  cancelButtonTitle:@"OK"
 											  otherButtonTitles:nil];
 		[alert show];
-		self.indicatorImage.image = [UIImage imageNamed:@"Neutral.png"];
+		[self setIndicatorsNeutral];
 		//[self showInfo:nil];
-	} else {
-		[self recalculateIndicators];
 	}
 }
 
@@ -62,6 +63,7 @@ NSString * const PillTimerAlertsPrefKey  = @"PillTimerAlertsPrefKey";
     [self setIndicatorImage:nil];
     [self setIndicatorText:nil];
     [self setRecentDoses:nil];
+    [self setIndicatorBigText:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -107,6 +109,8 @@ NSString * const PillTimerAlertsPrefKey  = @"PillTimerAlertsPrefKey";
 		} else {
 			[self setIndicatorsYes];
 		}
+	} else if ((_doseHourlyInterval < 0) || (_doseDailyLimit <= 0)) {
+		[self setIndicatorsNeutral];
 	} else {
 		[self setIndicatorsYes];
 	}
@@ -118,12 +122,16 @@ NSString * const PillTimerAlertsPrefKey  = @"PillTimerAlertsPrefKey";
 {
 	NSMutableString *newDoseList = [[NSMutableString alloc] init];
 	
-	for (NSDate *thisDate in [[DoseStore defaultStore] allRecentDoses]) {
-		if (newDoseList.length > 0) [newDoseList appendString:@"\n"];
-		
-		[newDoseList appendString:[NSDateFormatter localizedStringFromDate:thisDate
-																 dateStyle:NSDateFormatterNoStyle
-																 timeStyle:NSDateFormatterShortStyle]];
+	if ([[DoseStore defaultStore] numberOfDoses] > 0) {
+		for (NSDate *thisDate in [[DoseStore defaultStore] allRecentDoses]) {
+			if (newDoseList.length > 0) [newDoseList appendString:@"\n"];
+			
+			[newDoseList appendString:[NSDateFormatter localizedStringFromDate:thisDate
+																	 dateStyle:NSDateFormatterNoStyle
+																	 timeStyle:NSDateFormatterShortStyle]];
+		}
+	} else {
+		[newDoseList appendString:NSLocalizedString(@"No doses recorded.", nil)];
 	}
 	
 	self.recentDoses.text = newDoseList;
@@ -138,16 +146,25 @@ NSString * const PillTimerAlertsPrefKey  = @"PillTimerAlertsPrefKey";
 - (void)setIndicatorsYes
 {
 	self.indicatorImage.image = [UIImage imageNamed:@"OK.png"];
-	self.indicatorText.text = @"You can has";
+	self.indicatorText.text = NSLocalizedString(@"You may take a dose now.", nil);
+	self.indicatorBigText.text = NSLocalizedString(@"Yes", nil);
 }
 
 - (void)setIndicatorsNo:(NSDate *)expiresTime
 {
 	self.indicatorImage.image = [UIImage imageNamed:@"Ex.png"];
-	self.indicatorText.text = [NSString stringWithFormat: @"Not until %@",
+	self.indicatorText.text = [NSString stringWithFormat: NSLocalizedString(@"Next dose: %@", nil),
 							   [NSDateFormatter localizedStringFromDate:expiresTime
 															  dateStyle:NSDateFormatterNoStyle
 															  timeStyle:NSDateFormatterShortStyle]];
+	self.indicatorBigText.text = NSLocalizedString(@"No", nil);
+}
+
+- (void)setIndicatorsNeutral
+{
+	self.indicatorImage.image = [UIImage imageNamed:@"Neutral.png"];
+	self.indicatorText.text = NSLocalizedString(@"No dosage information", nil);
+	self.indicatorBigText.text = @"– –";
 }
 
 - (void)setAlertFor:(NSDate *)fireTime

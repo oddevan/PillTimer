@@ -15,6 +15,7 @@
 - (IBAction)showInfo:(id)sender;
 - (IBAction)recordNewDose:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UILabel *indicatorBigText;
 @property (weak, nonatomic) IBOutlet UIImageView *indicatorImage;
 @property (weak, nonatomic) IBOutlet UILabel *indicatorText;
 @property (weak, nonatomic) IBOutlet UITextView *recentDoses;
