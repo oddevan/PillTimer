@@ -40,6 +40,8 @@ NSString * const PillTimerAlertsPrefKey  = @"PillTimerAlertsPrefKey";
 	_doseDailyLimit = [[NSUserDefaults standardUserDefaults] integerForKey:PillTimerDailyPrefKey];
 	_doseHourlyInterval = [[NSUserDefaults standardUserDefaults] integerForKey:PillTimerHourlyPrefKey] * OneHourTimeInterval;
 	_alertsOn = [[NSUserDefaults standardUserDefaults] boolForKey:PillTimerAlertsPrefKey];
+	
+	[[DoseStore defaultStore] loadDosesIfNecessary];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -53,7 +55,6 @@ NSString * const PillTimerAlertsPrefKey  = @"PillTimerAlertsPrefKey";
 											  cancelButtonTitle:@"OK"
 											  otherButtonTitles:nil];
 		[alert show];
-		[self setIndicatorsNeutral];
 		//[self showInfo:nil];
 	}
 }
@@ -78,10 +79,11 @@ NSString * const PillTimerAlertsPrefKey  = @"PillTimerAlertsPrefKey";
 	if ([[DoseStore defaultStore] numberOfDoses] > 0) {
 		NSDate *earliestDose = [NSDate distantFuture];
 		NSDate *latestDose = [NSDate distantPast];
+		NSMutableArray *expiredDoses = [[NSMutableArray alloc] init];
 		
 		for (NSDate *thisDate in [[DoseStore defaultStore] allRecentDoses]) {
 			if (fabs([thisDate timeIntervalSinceNow]) > TwentyFourHourTimeInterval) {
-				[[DoseStore defaultStore] removeDose:thisDate];
+				[expiredDoses addObject:thisDate];
 			} else {
 				if ([thisDate timeIntervalSinceDate:latestDose] > 0) {
 					latestDose = thisDate;
@@ -91,6 +93,8 @@ NSString * const PillTimerAlertsPrefKey  = @"PillTimerAlertsPrefKey";
 				}
 			}
 		}
+		//Moving the removal outside of the enumeration
+		[[DoseStore defaultStore] removeDoses:expiredDoses];
 		
 		if (([[DoseStore defaultStore] numberOfDoses] >= _doseDailyLimit) ||
 			(fabs([latestDose timeIntervalSinceNow]) < _doseHourlyInterval)) {
@@ -108,11 +112,14 @@ NSString * const PillTimerAlertsPrefKey  = @"PillTimerAlertsPrefKey";
 			
 		} else {
 			[self setIndicatorsYes];
+			[self clearAlert];
 		}
 	} else if ((_doseHourlyInterval < 0) || (_doseDailyLimit <= 0)) {
 		[self setIndicatorsNeutral];
+		[self clearAlert];
 	} else {
 		[self setIndicatorsYes];
+		[self clearAlert];
 	}
 	
 	[self refreshRecentDoses];

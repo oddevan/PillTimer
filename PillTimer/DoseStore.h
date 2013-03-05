@@ -16,10 +16,11 @@
 + (DoseStore *)defaultStore;
 + (NSString *)archivePath;
 
-- (NSArray *)allRecentDoses;
+- (NSMutableArray *)allRecentDoses;
 - (int)numberOfDoses;
 - (void)addDose:(NSDate *)newDose;
 - (void)removeDose:(NSDate *)removeThis;
+- (void)removeDoses:(NSArray *)removeThese;
 - (void)removeAllDoses;
 
 - (void)loadDosesIfNecessary;

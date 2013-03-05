@@ -41,7 +41,7 @@ static DoseStore *defaultStore = nil;
 	return self;
 }
 
-- (NSArray *)allRecentDoses
+- (NSMutableArray *)allRecentDoses
 {
 	[self loadDosesIfNecessary];
 	return _allRecentDoses;
@@ -62,6 +62,11 @@ static DoseStore *defaultStore = nil;
 - (void)removeDose:(NSDate *)removeThis
 {
 	[_allRecentDoses removeObject:removeThis];
+}
+
+- (void)removeDoses:(NSArray *)removeThese
+{
+	[_allRecentDoses removeObjectsInArray:removeThese];
 }
 
 - (void)removeAllDoses
