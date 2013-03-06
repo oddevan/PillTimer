@@ -50,12 +50,12 @@ NSString * const PillTimerAlertsPrefKey  = @"PillTimerAlertsPrefKey";
 	
 	if ((_doseHourlyInterval < 0) || (_doseDailyLimit <= 0)) {
 		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Information", nil)
-														message:NSLocalizedString(@"Welcome! Please set the dosage information so we can begin.", nil)
+														message:NSLocalizedString(@"This is a timer designed to help you follow dosage instructions as given by your doctor, pharmacist, or other authority. Only your doctor or pharmacist can answer questions you have about your medication. While this app is here to help, neither it nor those who made it can advise you on whether or not you should take any form of medication.", nil)
 													   delegate:nil
-											  cancelButtonTitle:@"OK"
+											  cancelButtonTitle:@"Accept"
 											  otherButtonTitles:nil];
 		[alert show];
-		//[self showInfo:nil];
+		[self showInfo:nil];
 	}
 }
 

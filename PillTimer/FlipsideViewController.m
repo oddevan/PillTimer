@@ -34,6 +34,12 @@
 	return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
 #pragma mark - Actions
 
 - (IBAction)done:(id)sender
@@ -59,6 +65,11 @@
 - (IBAction)dailyLimitChanged:(id)sender
 {
 	[self.delegate flipsideViewController:self changedDailyLimitTo:self.doseDailyLimit.text.intValue];
+}
+
+- (IBAction)backgroundTapped:(id)sender
+{
+    [self.view endEditing:YES];
 }
 
 @end

@@ -18,7 +18,7 @@
 - (void)flipsideViewController:(FlipsideViewController *)controller changedAlertSettingTo:(BOOL)alertsOn;
 @end
 
-@interface FlipsideViewController : UIViewController
+@interface FlipsideViewController : UIViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) id <FlipsideViewControllerDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UITextField *doseHourlyInterval;
@@ -30,5 +30,6 @@
 - (IBAction)alertSettingChanged:(id)sender;
 - (IBAction)hourlyLimitChanged:(id)sender;
 - (IBAction)dailyLimitChanged:(id)sender;
+- (IBAction)backgroundTapped:(id)sender;
 
 @end
