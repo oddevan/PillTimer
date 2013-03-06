@@ -41,6 +41,8 @@ NSString * const PillTimerAlertsPrefKey  = @"PillTimerAlertsPrefKey";
 	_doseHourlyInterval = [[NSUserDefaults standardUserDefaults] integerForKey:PillTimerHourlyPrefKey] * OneHourTimeInterval;
 	_alertsOn = [[NSUserDefaults standardUserDefaults] boolForKey:PillTimerAlertsPrefKey];
 	
+    self.bannerView.delegate = self;
+    
 	[[DoseStore defaultStore] loadDosesIfNecessary];
 }
 
@@ -65,6 +67,7 @@ NSString * const PillTimerAlertsPrefKey  = @"PillTimerAlertsPrefKey";
     [self setIndicatorText:nil];
     [self setRecentDoses:nil];
     [self setIndicatorBigText:nil];
+    [self setBannerView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -238,6 +241,28 @@ NSString * const PillTimerAlertsPrefKey  = @"PillTimerAlertsPrefKey";
 	controller.doseHourlyInterval.text = [NSString stringWithFormat:@"%d", (int)(_doseHourlyInterval / OneHourTimeInterval)];
 	controller.doseDailyLimit.text = [NSString stringWithFormat:@"%d", _doseDailyLimit];
 	controller.alertSwitch.on = _alertsOn;
+}
+
+#pragma mark - iAd stuff
+
+- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
+{
+    self.bannerView.hidden = YES;
+}
+
+- (void)bannerViewActionDidFinish:(ADBannerView *)banner
+{
+    [self recalculateIndicators];
+}
+
+- (void)bannerViewWillLoadAd:(ADBannerView *)banner
+{
+    self.bannerView.hidden = NO;
+}
+
+- (BOOL)bannerViewActionShouldBegin:(ADBannerView *)banner willLeaveApplication:(BOOL)willLeave
+{
+    return YES;
 }
 
 @end

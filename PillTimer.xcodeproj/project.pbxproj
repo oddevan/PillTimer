@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F940B7F716E6D228007970B7 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F940B7F616E6D228007970B7 /* iAd.framework */; };
 		F98982AE16CBFC8A0091E675 /* PillTimerAlert.aif in Resources */ = {isa = PBXBuildFile; fileRef = F98982AD16CBFC8A0091E675 /* PillTimerAlert.aif */; };
 		F98982B116D287AF0091E675 /* DoseStore.m in Sources */ = {isa = PBXBuildFile; fileRef = F98982B016D287AF0091E675 /* DoseStore.m */; };
 		F9A5609D16BFFE2A00FA47D9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A5609C16BFFE2A00FA47D9 /* UIKit.framework */; };
@@ -33,6 +34,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F940B7F616E6D228007970B7 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		F98982AD16CBFC8A0091E675 /* PillTimerAlert.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = PillTimerAlert.aif; sourceTree = "<group>"; };
 		F98982AF16D287AF0091E675 /* DoseStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoseStore.h; sourceTree = "<group>"; };
 		F98982B016D287AF0091E675 /* DoseStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoseStore.m; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F940B7F716E6D228007970B7 /* iAd.framework in Frameworks */,
 				F9A5609D16BFFE2A00FA47D9 /* UIKit.framework in Frameworks */,
 				F9A5609F16BFFE2A00FA47D9 /* Foundation.framework in Frameworks */,
 				F9A560A116BFFE2A00FA47D9 /* CoreGraphics.framework in Frameworks */,
@@ -82,6 +85,7 @@
 		F9A5608D16BFFE2A00FA47D9 = {
 			isa = PBXGroup;
 			children = (
+				F940B7F616E6D228007970B7 /* iAd.framework */,
 				F9AC8FD816DFF0B300F17D5A /* Default-568h@2x.png */,
 				F9AC8FD616DFF0A900F17D5A /* Default.png */,
 				F9AC8FD416DFD89400F17D5A /* Default@2x.png */,
