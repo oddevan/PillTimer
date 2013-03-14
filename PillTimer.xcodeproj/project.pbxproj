@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F940B7F716E6D228007970B7 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F940B7F616E6D228007970B7 /* iAd.framework */; };
+		F96697BB16EF8C1700B41A0E /* NewDoseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F96697B916EF8C1700B41A0E /* NewDoseViewController.m */; };
+		F96697BC16EF8C1700B41A0E /* NewDoseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96697BA16EF8C1700B41A0E /* NewDoseViewController.xib */; };
 		F98982AE16CBFC8A0091E675 /* PillTimerAlert.aif in Resources */ = {isa = PBXBuildFile; fileRef = F98982AD16CBFC8A0091E675 /* PillTimerAlert.aif */; };
 		F98982B116D287AF0091E675 /* DoseStore.m in Sources */ = {isa = PBXBuildFile; fileRef = F98982B016D287AF0091E675 /* DoseStore.m */; };
 		F9A5609D16BFFE2A00FA47D9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A5609C16BFFE2A00FA47D9 /* UIKit.framework */; };
@@ -35,6 +37,9 @@
 
 /* Begin PBXFileReference section */
 		F940B7F616E6D228007970B7 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		F96697B816EF8C1700B41A0E /* NewDoseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewDoseViewController.h; sourceTree = "<group>"; };
+		F96697B916EF8C1700B41A0E /* NewDoseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewDoseViewController.m; sourceTree = "<group>"; };
+		F96697BA16EF8C1700B41A0E /* NewDoseViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewDoseViewController.xib; sourceTree = "<group>"; };
 		F98982AD16CBFC8A0091E675 /* PillTimerAlert.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = PillTimerAlert.aif; sourceTree = "<group>"; };
 		F98982AF16D287AF0091E675 /* DoseStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoseStore.h; sourceTree = "<group>"; };
 		F98982B016D287AF0091E675 /* DoseStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoseStore.m; sourceTree = "<group>"; };
@@ -136,6 +141,9 @@
 				F9A560A316BFFE2A00FA47D9 /* Supporting Files */,
 				F98982AF16D287AF0091E675 /* DoseStore.h */,
 				F98982B016D287AF0091E675 /* DoseStore.m */,
+				F96697B816EF8C1700B41A0E /* NewDoseViewController.h */,
+				F96697B916EF8C1700B41A0E /* NewDoseViewController.m */,
+				F96697BA16EF8C1700B41A0E /* NewDoseViewController.xib */,
 			);
 			path = PillTimer;
 			sourceTree = "<group>";
@@ -217,6 +225,7 @@
 				F9AC8FD516DFD89400F17D5A /* Default@2x.png in Resources */,
 				F9AC8FD716DFF0A900F17D5A /* Default.png in Resources */,
 				F9AC8FD916DFF0B300F17D5A /* Default-568h@2x.png in Resources */,
+				F96697BC16EF8C1700B41A0E /* NewDoseViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,6 +241,7 @@
 				F9A560B016BFFE2A00FA47D9 /* MainViewController.m in Sources */,
 				F9A560B316BFFE2A00FA47D9 /* FlipsideViewController.m in Sources */,
 				F98982B116D287AF0091E675 /* DoseStore.m in Sources */,
+				F96697BB16EF8C1700B41A0E /* NewDoseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

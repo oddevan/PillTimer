@@ -8,8 +8,9 @@
 
 #import <iAd/iAd.h>
 #import "FlipsideViewController.h"
+#import "NewDoseViewController.h"
 
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, ADBannerViewDelegate>
+@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, ADBannerViewDelegate, NewDoseViewControllerDelegate>
 
 - (void)recalculateIndicators;
 

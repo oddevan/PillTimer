@@ -44,6 +44,9 @@ static DoseStore *defaultStore = nil;
 - (NSMutableArray *)allRecentDoses
 {
 	[self loadDosesIfNecessary];
+    [_allRecentDoses sortUsingComparator:^NSComparisonResult(id obj1, id obj2){
+        return [obj1 compare:obj2];
+    }];
 	return _allRecentDoses;
 }
 

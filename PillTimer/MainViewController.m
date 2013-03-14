@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "DoseStore.h"
+#import "NewDoseViewController.h"
 
 const NSTimeInterval TwentyFourHourTimeInterval = 86400;
 const NSTimeInterval OneHourTimeInterval = 3600;
@@ -148,7 +149,16 @@ NSString * const PillTimerAlertsPrefKey  = @"PillTimerAlertsPrefKey";
 }
 
 - (IBAction)recordNewDose:(id)sender {
-	[[DoseStore defaultStore] addDose:[NSDate date]];
+    NewDoseViewController *controller = [[NewDoseViewController alloc] initWithNibName:@"NewDoseViewController" bundle:nil];
+    controller.delegate = self;
+    controller.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentModalViewController:controller animated:YES];
+}
+
+- (void)newDoseViewControllerDidFinish:(NewDoseViewController *)controller
+{
+    [self dismissModalViewControllerAnimated:YES];
+	
 	[self refreshRecentDoses];
 	[self recalculateIndicators];
 }
