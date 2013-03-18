@@ -29,6 +29,7 @@
     [super viewDidLoad];
     
     self.timePicker.date = [NSDate date];
+    [self timeChanged:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,6 +60,9 @@
     } else {
         [[DoseStore defaultStore] addDose:[self.timePicker.date dateByAddingTimeInterval:-86400]];
     }
+    [self.delegate newDoseViewControllerDidFinish:self];
+}
+- (IBAction)formCancelled:(id)sender {
     [self.delegate newDoseViewControllerDidFinish:self];
 }
 

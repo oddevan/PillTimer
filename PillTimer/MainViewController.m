@@ -21,6 +21,8 @@ NSString * const PillTimerAlertsPrefKey  = @"PillTimerAlertsPrefKey";
 	NSTimeInterval _doseHourlyInterval;
 	int _doseDailyLimit;
 	BOOL _alertsOn;
+    NewDoseViewController *_newDoseController;
+    UIView *_fullFrameView;
 }
 
 - (void)setIndicatorsYes;
@@ -149,18 +151,40 @@ NSString * const PillTimerAlertsPrefKey  = @"PillTimerAlertsPrefKey";
 }
 
 - (IBAction)recordNewDose:(id)sender {
-    NewDoseViewController *controller = [[NewDoseViewController alloc] initWithNibName:@"NewDoseViewController" bundle:nil];
-    controller.delegate = self;
-    controller.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    [self presentModalViewController:controller animated:YES];
+    _newDoseController = [[NewDoseViewController alloc] initWithNibName:@"NewDoseViewController" bundle:nil];
+    _newDoseController.delegate = self;
+    
+    _fullFrameView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    _fullFrameView.backgroundColor = nil;
+    [self.view addSubview:_fullFrameView];
+    
+    _newDoseController.view.center = CGPointMake(_fullFrameView.bounds.size.width / 2, _fullFrameView.bounds.size.height + 387.0f / 2.0f);
+    [_fullFrameView addSubview:_newDoseController.view];
+    
+    [UIView animateWithDuration:0.3f animations:^{_newDoseController.view.center = CGPointMake(_fullFrameView.bounds.size.width / 2, _fullFrameView.bounds.size.height - 387.0f / 2.0f);}];
+    
+    //[self.view addSubview:newDoseController.view];
+    
+    //newDoseController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    //[self presentModalViewController:newDoseController animated:YES];
 }
 
 - (void)newDoseViewControllerDidFinish:(NewDoseViewController *)controller
 {
-    [self dismissModalViewControllerAnimated:YES];
-	
-	[self refreshRecentDoses];
-	[self recalculateIndicators];
+    [UIView animateWithDuration:0.3f
+                     animations:^{
+        _newDoseController.view.center = CGPointMake(_fullFrameView.bounds.size.width / 2,
+                                                     _fullFrameView.bounds.size.height + 387.0f / 2.0f);}
+                     completion:^(BOOL finished){
+                         [_newDoseController.view removeFromSuperview];
+                         [_fullFrameView removeFromSuperview];
+                         
+                         _newDoseController = nil;
+                         _fullFrameView = nil;
+                         
+                         [self refreshRecentDoses];
+                         [self recalculateIndicators];
+                     }];
 }
 
 - (void)setIndicatorsYes
