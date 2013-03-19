@@ -12,6 +12,7 @@
 		F96697BC16EF8C1700B41A0E /* NewDoseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96697BA16EF8C1700B41A0E /* NewDoseViewController.xib */; };
 		F98982AE16CBFC8A0091E675 /* PillTimerAlert.aif in Resources */ = {isa = PBXBuildFile; fileRef = F98982AD16CBFC8A0091E675 /* PillTimerAlert.aif */; };
 		F98982B116D287AF0091E675 /* DoseStore.m in Sources */ = {isa = PBXBuildFile; fileRef = F98982B016D287AF0091E675 /* DoseStore.m */; };
+		F99F7F4C16F8A5DC00CCF404 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F99F7F4B16F8A5DC00CCF404 /* QuartzCore.framework */; };
 		F9A5609D16BFFE2A00FA47D9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A5609C16BFFE2A00FA47D9 /* UIKit.framework */; };
 		F9A5609F16BFFE2A00FA47D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A5609E16BFFE2A00FA47D9 /* Foundation.framework */; };
 		F9A560A116BFFE2A00FA47D9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A560A016BFFE2A00FA47D9 /* CoreGraphics.framework */; };
@@ -43,6 +44,7 @@
 		F98982AD16CBFC8A0091E675 /* PillTimerAlert.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = PillTimerAlert.aif; sourceTree = "<group>"; };
 		F98982AF16D287AF0091E675 /* DoseStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoseStore.h; sourceTree = "<group>"; };
 		F98982B016D287AF0091E675 /* DoseStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoseStore.m; sourceTree = "<group>"; };
+		F99F7F4B16F8A5DC00CCF404 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F9A5609816BFFE2A00FA47D9 /* PillTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PillTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9A5609C16BFFE2A00FA47D9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F9A5609E16BFFE2A00FA47D9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -77,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F99F7F4C16F8A5DC00CCF404 /* QuartzCore.framework in Frameworks */,
 				F940B7F716E6D228007970B7 /* iAd.framework in Frameworks */,
 				F9A5609D16BFFE2A00FA47D9 /* UIKit.framework in Frameworks */,
 				F9A5609F16BFFE2A00FA47D9 /* Foundation.framework in Frameworks */,
@@ -90,6 +93,7 @@
 		F9A5608D16BFFE2A00FA47D9 = {
 			isa = PBXGroup;
 			children = (
+				F99F7F4B16F8A5DC00CCF404 /* QuartzCore.framework */,
 				F940B7F616E6D228007970B7 /* iAd.framework */,
 				F9AC8FD816DFF0B300F17D5A /* Default-568h@2x.png */,
 				F9AC8FD616DFF0A900F17D5A /* Default.png */,
@@ -333,11 +337,13 @@
 		F9A560BD16BFFE2A00FA47D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Evan Hildreth";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PillTimer/PillTimer-Prefix.pch";
 				INFOPLIST_FILE = "PillTimer/PillTimer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7448080C-FE0B-4E4F-8687-3073DC63D83A";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -346,11 +352,13 @@
 		F9A560BE16BFFE2A00FA47D9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Evan Hildreth";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PillTimer/PillTimer-Prefix.pch";
 				INFOPLIST_FILE = "PillTimer/PillTimer-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7448080C-FE0B-4E4F-8687-3073DC63D83A";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -104,7 +104,7 @@
 					<object class="IBUIButton" id="662698317">
 						<reference key="NSNextResponder" ref="883825266"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{20, 211}, {280, 39}}</string>
+						<string key="NSFrame">{{20, 208}, {280, 44}}</string>
 						<reference key="NSSuperview" ref="883825266"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="351781591"/>
@@ -263,7 +263,7 @@
 					</object>
 					<object class="IBUINavigationBar" id="872898768">
 						<reference key="NSNextResponder" ref="883825266"/>
-						<int key="NSvFlags">290</int>
+						<int key="NSvFlags">266</int>
 						<string key="NSFrame">{{0, 416}, {320, 44}}</string>
 						<reference key="NSSuperview" ref="883825266"/>
 						<reference key="NSWindow"/>
@@ -280,7 +280,7 @@
 					</object>
 					<object class="IBADBannerView" id="649749491">
 						<reference key="NSNextResponder" ref="883825266"/>
-						<int key="NSvFlags">306</int>
+						<int key="NSvFlags">264</int>
 						<string key="NSFrame">{{0, 410}, {320, 50}}</string>
 						<reference key="NSSuperview" ref="883825266"/>
 						<reference key="NSWindow"/>

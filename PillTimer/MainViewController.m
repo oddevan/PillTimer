@@ -158,15 +158,10 @@ NSString * const PillTimerAlertsPrefKey  = @"PillTimerAlertsPrefKey";
     _fullFrameView.backgroundColor = nil;
     [self.view addSubview:_fullFrameView];
     
-    _newDoseController.view.center = CGPointMake(_fullFrameView.bounds.size.width / 2, _fullFrameView.bounds.size.height + 387.0f / 2.0f);
+    _newDoseController.view.center = CGPointMake(_fullFrameView.bounds.size.width / 2, _fullFrameView.bounds.size.height + _newDoseController.viewHeight / 2.0f);
     [_fullFrameView addSubview:_newDoseController.view];
     
-    [UIView animateWithDuration:0.3f animations:^{_newDoseController.view.center = CGPointMake(_fullFrameView.bounds.size.width / 2, _fullFrameView.bounds.size.height - 387.0f / 2.0f);}];
-    
-    //[self.view addSubview:newDoseController.view];
-    
-    //newDoseController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
-    //[self presentModalViewController:newDoseController animated:YES];
+    [UIView animateWithDuration:0.3f animations:^{_newDoseController.view.center = CGPointMake(_fullFrameView.bounds.size.width / 2, _fullFrameView.bounds.size.height - _newDoseController.viewHeight / 2.0f);}];
 }
 
 - (void)newDoseViewControllerDidFinish:(NewDoseViewController *)controller
@@ -174,7 +169,7 @@ NSString * const PillTimerAlertsPrefKey  = @"PillTimerAlertsPrefKey";
     [UIView animateWithDuration:0.3f
                      animations:^{
         _newDoseController.view.center = CGPointMake(_fullFrameView.bounds.size.width / 2,
-                                                     _fullFrameView.bounds.size.height + 387.0f / 2.0f);}
+                                                     _fullFrameView.bounds.size.height + _newDoseController.viewHeight / 2.0f);}
                      completion:^(BOOL finished){
                          [_newDoseController.view removeFromSuperview];
                          [_fullFrameView removeFromSuperview];

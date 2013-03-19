@@ -22,5 +22,6 @@
 @property (weak, nonatomic) id <NewDoseViewControllerDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UIDatePicker *timePicker;
 @property (weak, nonatomic) IBOutlet UILabel *doseCaption;
+@property (readonly) CGFloat viewHeight;
 
 @end
