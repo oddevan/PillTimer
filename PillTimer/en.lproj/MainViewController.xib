@@ -96,7 +96,7 @@
 						<array key="IBUIItems">
 							<object class="IBUINavigationItem" id="520358129">
 								<reference key="IBUINavigationBar" ref="228514030"/>
-								<string key="IBUITitle">Pill Timer</string>
+								<string key="IBUITitle">PillTimer</string>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
 						</array>
@@ -267,6 +267,7 @@
 						<string key="NSFrame">{{0, 416}, {320, 44}}</string>
 						<reference key="NSSuperview" ref="883825266"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<reference key="IBUITintColor" ref="551737785"/>
@@ -406,7 +407,6 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="228514030"/>
 							<reference ref="712874050"/>
-							<reference ref="558454645"/>
 							<reference ref="351781591"/>
 							<reference ref="585426132"/>
 							<reference ref="660133053"/>
@@ -414,6 +414,7 @@
 							<reference ref="872898768"/>
 							<reference ref="649749491"/>
 							<reference ref="662698317"/>
+							<reference ref="558454645"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
