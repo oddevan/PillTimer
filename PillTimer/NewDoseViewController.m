@@ -13,6 +13,7 @@
 @interface NewDoseViewController ()
 {
 	__weak IBOutlet UIButton *_cancelButton;
+    __weak IBOutlet UIButton *_doseButton;
 }
 
 @end
@@ -34,35 +35,16 @@
     
     self.timePicker.date = [NSDate date];
     [self timeChanged:nil];
-	
-	//via http://stackoverflow.com/questions/7238507/change-round-rect-button-background-color-on-statehighlighted
-	
-	// set the button's highlight color
-    [_cancelButton setTintColor:[UIColor colorWithRed:0.2578f green:0.2578f blue:0.2578f alpha:1.0f]];
-	
-    // clear any existing background image
-    [_cancelButton setBackgroundImage:nil forState:UIControlStateNormal];
-	
-    // place the button into highlighted state with no title
-    BOOL wasHighlighted = _cancelButton.highlighted;
-    NSString* savedTitle = [_cancelButton titleForState:UIControlStateNormal];
-    [_cancelButton setTitle:nil forState:UIControlStateNormal];
-    [_cancelButton setHighlighted:YES];
-	
-    // render the highlighted state of the button into an image
-    UIGraphicsBeginImageContext(_cancelButton.layer.frame.size);
-    CGContextRef graphicsContext = UIGraphicsGetCurrentContext();
-    [_cancelButton.layer renderInContext:graphicsContext];
-    UIImage* image = UIGraphicsGetImageFromCurrentImageContext();
-    UIImage* stretchableImage = [image stretchableImageWithLeftCapWidth:12 topCapHeight:0];
-    UIGraphicsEndImageContext();
-	
-    // restore the button's state and title
-    [_cancelButton setHighlighted:wasHighlighted];
-    [_cancelButton setTitle:savedTitle forState:UIControlStateNormal];
-	
-    // set background image of all buttons
-    [_cancelButton setBackgroundImage:stretchableImage forState:UIControlStateNormal];
+    
+    //images and sample code via http://nathanbarry.com/designing-buttons-ios5/
+    
+    UIImage *buttonImage = [[UIImage imageNamed:@"blackButton.png"]
+                            resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
+    UIImage *buttonImageHighlight = [[UIImage imageNamed:@"blackButtonHighlight.png"]
+                                     resizableImageWithCapInsets:UIEdgeInsetsMake(18, 18, 18, 18)];
+
+    [_cancelButton setBackgroundImage:buttonImage forState:UIControlStateNormal];
+    [_cancelButton setBackgroundImage:buttonImageHighlight forState:UIControlStateHighlighted];
 }
 
 - (void)didReceiveMemoryWarning
@@ -103,6 +85,7 @@
     [self setTimePicker:nil];
     [self setDoseCaption:nil];
 	_cancelButton = nil;
+    _doseButton = nil;
     [super viewDidUnload];
 }
 

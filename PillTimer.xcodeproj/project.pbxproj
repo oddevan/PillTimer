@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F922933116F93F9600CE7DF3 /* blackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = F922932D16F93F9600CE7DF3 /* blackButton.png */; };
+		F922933216F93F9600CE7DF3 /* blackButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F922932E16F93F9600CE7DF3 /* blackButton@2x.png */; };
+		F922933316F93F9600CE7DF3 /* blackButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = F922932F16F93F9600CE7DF3 /* blackButtonHighlight.png */; };
+		F922933416F93F9600CE7DF3 /* blackButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F922933016F93F9600CE7DF3 /* blackButtonHighlight@2x.png */; };
 		F940B7F716E6D228007970B7 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F940B7F616E6D228007970B7 /* iAd.framework */; };
 		F96697BB16EF8C1700B41A0E /* NewDoseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F96697B916EF8C1700B41A0E /* NewDoseViewController.m */; };
 		F96697BC16EF8C1700B41A0E /* NewDoseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F96697BA16EF8C1700B41A0E /* NewDoseViewController.xib */; };
@@ -37,6 +41,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F922932D16F93F9600CE7DF3 /* blackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackButton.png; sourceTree = "<group>"; };
+		F922932E16F93F9600CE7DF3 /* blackButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackButton@2x.png"; sourceTree = "<group>"; };
+		F922932F16F93F9600CE7DF3 /* blackButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackButtonHighlight.png; sourceTree = "<group>"; };
+		F922933016F93F9600CE7DF3 /* blackButtonHighlight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackButtonHighlight@2x.png"; sourceTree = "<group>"; };
 		F940B7F616E6D228007970B7 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		F96697B816EF8C1700B41A0E /* NewDoseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewDoseViewController.h; sourceTree = "<group>"; };
 		F96697B916EF8C1700B41A0E /* NewDoseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewDoseViewController.m; sourceTree = "<group>"; };
@@ -127,6 +135,10 @@
 		F9A560A216BFFE2A00FA47D9 /* PillTimer */ = {
 			isa = PBXGroup;
 			children = (
+				F922932D16F93F9600CE7DF3 /* blackButton.png */,
+				F922932E16F93F9600CE7DF3 /* blackButton@2x.png */,
+				F922932F16F93F9600CE7DF3 /* blackButtonHighlight.png */,
+				F922933016F93F9600CE7DF3 /* blackButtonHighlight@2x.png */,
 				F9AC8FC416DFCC9300F17D5A /* Ex.png */,
 				F9AC8FC516DFCC9300F17D5A /* Ex@2x.png */,
 				F9AC8FC616DFCC9300F17D5A /* Neutral.png */,
@@ -230,6 +242,10 @@
 				F9AC8FD716DFF0A900F17D5A /* Default.png in Resources */,
 				F9AC8FD916DFF0B300F17D5A /* Default-568h@2x.png in Resources */,
 				F96697BC16EF8C1700B41A0E /* NewDoseViewController.xib in Resources */,
+				F922933116F93F9600CE7DF3 /* blackButton.png in Resources */,
+				F922933216F93F9600CE7DF3 /* blackButton@2x.png in Resources */,
+				F922933316F93F9600CE7DF3 /* blackButtonHighlight.png in Resources */,
+				F922933416F93F9600CE7DF3 /* blackButtonHighlight@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
