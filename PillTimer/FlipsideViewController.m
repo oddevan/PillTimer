@@ -72,4 +72,9 @@
     [self.view endEditing:YES];
 }
 
+- (IBAction)vanityPlateTapped:(id)sender
+{
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString: @"http://pilltimer.oddevan.com/"]];
+}
+
 @end

@@ -31,5 +31,6 @@
 - (IBAction)hourlyLimitChanged:(id)sender;
 - (IBAction)dailyLimitChanged:(id)sender;
 - (IBAction)backgroundTapped:(id)sender;
+- (IBAction)vanityPlateTapped:(id)sender;
 
 @end
