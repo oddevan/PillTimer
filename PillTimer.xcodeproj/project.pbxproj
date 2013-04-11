@@ -362,6 +362,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Evan Hildreth";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Evan Hildreth";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PillTimer/PillTimer-Prefix.pch";
 				INFOPLIST_FILE = "PillTimer/PillTimer-Info.plist";
@@ -377,6 +378,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Evan Hildreth";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Evan Hildreth";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PillTimer/PillTimer-Prefix.pch";
 				INFOPLIST_FILE = "PillTimer/PillTimer-Info.plist";
