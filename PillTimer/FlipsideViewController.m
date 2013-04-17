@@ -9,6 +9,9 @@
 #import "FlipsideViewController.h"
 
 @interface FlipsideViewController ()
+{
+	UIToolbar *extraToolbar;
+}
 
 @end
 
@@ -17,7 +20,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	extraToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.frame.size.width, 44.0f)];
+	extraToolbar.tintColor = [UIColor darkGrayColor];
+	
+	NSMutableArray *items = [NSMutableArray array];
+	[items addObject:[[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStylePlain target:self action:@selector(textFieldShouldReturn:)]];
+	[items addObject:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil]];
+	[items addObject:[[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(textFieldShouldReturn:)]];
+	
+	self.doseHourlyInterval.inputAccessoryView = extraToolbar;
+	self.doseDailyLimit.inputAccessoryView = extraToolbar;
 }
 
 - (void)viewDidUnload
