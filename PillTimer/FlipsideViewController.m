@@ -10,7 +10,6 @@
 
 @interface FlipsideViewController ()
 {
-	UIToolbar *extraToolbar;
 }
 
 @end
@@ -20,16 +19,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	extraToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.frame.size.width, 44.0f)];
-	extraToolbar.tintColor = [UIColor darkGrayColor];
+    
+	UIToolbar *hourlyExtraToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.frame.size.width, 44.0f)];
+	hourlyExtraToolbar.tintColor = [UIColor darkGrayColor];
+	hourlyExtraToolbar.items = [NSMutableArray arrayWithObjects:[[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStyleBordered target:self action:@selector(switchToDailyLimit)], [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil], [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(backgroundTapped:)], nil];
 	
-	NSMutableArray *items = [NSMutableArray array];
-	[items addObject:[[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStylePlain target:self action:@selector(textFieldShouldReturn:)]];
-	[items addObject:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil]];
-	[items addObject:[[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(textFieldShouldReturn:)]];
-	
-	self.doseHourlyInterval.inputAccessoryView = extraToolbar;
-	self.doseDailyLimit.inputAccessoryView = extraToolbar;
+	self.doseHourlyInterval.inputAccessoryView = hourlyExtraToolbar;
+    
+	UIToolbar *dailyExtraToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.view.frame.size.width, 44.0f)];
+	dailyExtraToolbar.tintColor = [UIColor darkGrayColor];
+	dailyExtraToolbar.items = [NSMutableArray arrayWithObjects:[[UIBarButtonItem alloc] initWithTitle:@"Previous" style:UIBarButtonItemStyleBordered target:self action:@selector(switchToHourlyInterval)], [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil], [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(backgroundTapped:)], nil];
+    
+	self.doseDailyLimit.inputAccessoryView = dailyExtraToolbar;
 }
 
 - (void)viewDidUnload
@@ -50,6 +51,16 @@
 {
     [textField resignFirstResponder];
     return YES;
+}
+
+- (void)switchToHourlyInterval
+{
+    [self.doseHourlyInterval becomeFirstResponder];
+}
+
+- (void)switchToDailyLimit
+{
+    [self.doseDailyLimit becomeFirstResponder];
 }
 
 #pragma mark - Actions
