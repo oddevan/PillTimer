@@ -1,3 +1,7 @@
+### Archived
+
+This is version 1.2 of PillTimer. Version 2.0 and on uses custom copyrighted graphics and a freemium business model and thus isn't on GitHub at this time. If you have questions about it feel free to get in touch. Original README follows.
+
 ### Introducing PillTimer
 
 This is an app to keep track of medicine doses. Most medicine has two parts to dosage instructions: the interval between doses (often 4, 6, or 12 hours) and a daily limit to doses. Given this information, PillTimer will keep track of the doses you've taken in the past 24 hours and alert you when it is okay to take another dose.
